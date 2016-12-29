@@ -4,7 +4,7 @@ MAINTAINER Barcus <fjfc83@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get install wget
+RUN apt-get update && apt-get install -y wget
 
 RUN wget -q http://download.bareos.org/bareos/release/latest/Debian_8/Release.key -O- | apt-key add - && \
     echo 'deb download.bareos.org/bareos/release/latest/Debian_8/ /' > /etc/apt/sources.list.d/bareos.list && \

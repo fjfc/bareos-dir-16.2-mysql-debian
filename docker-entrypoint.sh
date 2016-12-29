@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# MAINTAINER Barcus <barcus@tou.nu>
+# MAINTAINER fjfernandez <fjfc83@gmail.com>
 
 if [ ! -f /etc/bareos/bareos-config.control ]
   then
@@ -11,7 +11,7 @@ if [ ! -f /etc/bareos/bareos-config.control ]
     then
     curl --silent --insecure https://raw.githubusercontent.com/bareos/bareos-webui/master/install/bareos/bareos-dir.d/profile/webui-admin.conf --output /etc/bareos/bareos-dir.d/profile/webui-admin.conf
   fi
- 
+
   # Download default webUI config
   if [ ! -f /etc/bareos/bareos-dir.d/console/admin.conf ]
     then
@@ -49,8 +49,8 @@ if [ ! -f /etc/bareos/bareos-db.control ]
 
   # Init MySQL DB
   echo -e "[client]\nhost=${DB_HOST}\nuser=root\npassword=${DB_PASSWORD}" > /root/.my.cnf
-  /usr/lib/bareos/scripts/create_bareos_database 
-  /usr/lib/bareos/scripts/make_bareos_tables 
+  /usr/lib/bareos/scripts/create_bareos_database
+  /usr/lib/bareos/scripts/make_bareos_tables
   #/usr/lib/bareos/scripts/grant_bareos_privileges
 
   # Control file

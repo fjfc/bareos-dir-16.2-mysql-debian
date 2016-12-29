@@ -1,11 +1,11 @@
 # BareOS director Dockerfile
 FROM       debian:latest
-MAINTAINER Barcus <fjfc83@gmail.com>
+MAINTAINER fjfernandez <fjfc83@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y wget && \
-    apt-get install -y curl 
+    apt-get install -y curl
 
 
 RUN wget -q http://download.bareos.org/bareos/release/latest/Debian_8.0/Release.key -O- | apt-key add - && \

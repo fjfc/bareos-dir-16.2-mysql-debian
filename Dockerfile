@@ -24,7 +24,7 @@ RUN tar cfvz /bareos-dir.tgz /etc/bareos
 
 EXPOSE 9101
 
-VOLUME /root/bareos/bareos-dir:/etc/bareos
+# VOLUME /root/bareos/bareos-dir:/etc/bareos
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/usr/sbin/bareos-dir", "-u", "bareos", "-f"]
